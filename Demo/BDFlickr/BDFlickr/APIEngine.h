@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "DataModels.h"
 
-
+// 2 modes of recieving the images back from the API
 typedef enum
 {
     FETCH_ONE_BY_ONE,

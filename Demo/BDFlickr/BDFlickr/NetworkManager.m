@@ -45,7 +45,6 @@
             [request addValue:value forHTTPHeaderField:key];
         }
     }
-    NSLog(@"Request: %@", url);
     
     NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse *response, NSError *  error) {
         

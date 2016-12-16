@@ -40,7 +40,7 @@
     self.apiKey = APIKey;
 }
 
-
+// interface point with the client. Check for an API Uses the network manage to make a GET call and then serialize the JSON responce and pass in to the Model.
 - (void) fetchRecentImageswithMode:(FetchMode)mode perPage:(NSString*)perPage pageNo:(NSString*)pageNo
 {
     if (self.apiKey == nil)
@@ -92,7 +92,7 @@
 }
 
 
-
+// The first Flickr API didnt give us all the required details about the image so we need to call again and request more.
 - (void) fetchImageDetails:(NSString *)imageId completion:(void (^)(NSString* description, NSString* datePosted))completionBlock
 {
     
@@ -114,6 +114,8 @@
     }];
 }
 
+
+//download each image and pass them back to the delegate
 - (void) downloadPhotos:(NSArray*)array mode:(FetchMode)mode{
     
     
@@ -133,7 +135,7 @@
                                                                               [NSData dataWithContentsOfURL:location]];
                                                            photo.image = downloadedImage;
                                                            [self.photoArray addObject:photo];
-                                                           
+                                                           // calling delegate method back on main thread as it is likely the user/client will call UI code from here, it doesnt have to be mainthread necessarily. 
                                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                                if (mode == FETCH_ONE_BY_ONE)
                                                                {
