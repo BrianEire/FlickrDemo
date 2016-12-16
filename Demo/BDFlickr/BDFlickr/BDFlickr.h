@@ -15,7 +15,3 @@
 #import "FlickrData.h"
 #import "DataModels.h"
 
-
-@interface BDFlickr : NSObject
-
-@end
