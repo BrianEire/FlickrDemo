@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="Uzj-L8-klu"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Demo App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcG-St-r1k">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Uzj-L8-klu" secondAttribute="bottom" id="5uB-0s-2JB"/>
+                            <constraint firstItem="Uzj-L8-klu" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="6zO-rg-wnq"/>
+                            <constraint firstItem="Uzj-L8-klu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8jY-5E-MuK"/>
+                            <constraint firstItem="Uzj-L8-klu" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="ANj-nf-BSS"/>
+                            <constraint firstAttribute="trailing" secondItem="RcG-St-r1k" secondAttribute="trailing" constant="20" id="VMm-kn-ORb"/>
+                            <constraint firstItem="Uzj-L8-klu" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1.2" id="aYG-pQ-QwQ"/>
+                            <constraint firstItem="Uzj-L8-klu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="d8g-Ta-9wa"/>
+                            <constraint firstItem="RcG-St-r1k" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hJP-Xo-8yw"/>
+                            <constraint firstAttribute="trailing" secondItem="Uzj-L8-klu" secondAttribute="trailing" id="iZr-h2-7uY"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="RcG-St-r1k" secondAttribute="bottom" constant="20" id="kdB-ou-PH2"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Uzj-L8-klu" secondAttribute="bottom" id="oof-Pj-qHx"/>
+                            <constraint firstItem="RcG-St-r1k" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vIa-ge-hM0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="VMm-kn-ORb"/>
+                                <exclude reference="6zO-rg-wnq"/>
+                                <exclude reference="aYG-pQ-QwQ"/>
+                                <exclude reference="d8g-Ta-9wa"/>
+                                <exclude reference="kdB-ou-PH2"/>
+                                <exclude reference="oof-Pj-qHx"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="VMm-kn-ORb"/>
+                                <exclude reference="hJP-Xo-8yw"/>
+                                <exclude reference="vIa-ge-hM0"/>
+                                <include reference="6zO-rg-wnq"/>
+                                <exclude reference="8jY-5E-MuK"/>
+                                <exclude reference="ANj-nf-BSS"/>
+                                <include reference="aYG-pQ-QwQ"/>
+                                <include reference="d8g-Ta-9wa"/>
+                                <exclude reference="iZr-h2-7uY"/>
+                                <exclude reference="5uB-0s-2JB"/>
+                                <include reference="kdB-ou-PH2"/>
+                                <include reference="oof-Pj-qHx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51.358695652173914" y="373.91304347826087"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launch" width="250" height="444"/>
+    </resources>
+</document>
