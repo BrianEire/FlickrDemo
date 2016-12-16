@@ -23,16 +23,20 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Cars";
+    self.title = @"Photos";
     self.dataArray = [[NSMutableArray alloc] init];
     self.apiEngine = [APIEngine sharedManager];
     self.apiEngine.delegate = self;
     [self.apiEngine setAPIKey:@"db7cd8d6c6b6d0432c6f5495d5b42a7d"];
 
+    //show a progress bar while we wait for the API to download and pass images back.
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.hud.labelText = @"Fetching images...";
     self.hud.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:1];
     
+    //2 mode options : FETCH_ONE_BY_ONE or FETCH_ALL_AT_ONCE
+    //Returns the most recent uploaded images to Flickr. Potentially NSFW
+    //Can set the number of images to be returned and what page to source them
     [self.apiEngine fetchRecentImageswithMode:FETCH_ONE_BY_ONE perPage:@"20" pageNo:@"1"];
     
 }
@@ -91,8 +95,10 @@
 }
 
 
-// TODO API needs to check the delegate has implemented these.
+
 #pragma mark - APIDelegate methods
+
+//Delegate method called when the mode is FETCH_ALL_AT_ONCE
 - (void)imagesReceived:(NSArray *)photos error:(NSError *)error
 {
 
@@ -104,7 +110,7 @@
     [self.collectionView reloadData];
 }
 
-
+//Delegate method called when the mode is FETCH_ONE_BY_ONE
 - (void)singleImageReceived:(Photo *)photo error:(NSError *)error
 {
     if (self.hud.alpha >= 1) // if the hud is visible and not being animated off screen already
@@ -117,8 +123,6 @@
     [self.dataArray addObject:photo];
     [self.collectionView reloadData];
 }
-
-
 
 
 @end
