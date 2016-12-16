@@ -15,5 +15,8 @@
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (assign) NSInteger selectedItemIndex;
 
+//- (void)imagesReceived:(NSArray *)photos error:(NSError *)error;
+//- (void)singleImageReceived:(Photo *)photo error:(NSError *)error;
+
 @end
 

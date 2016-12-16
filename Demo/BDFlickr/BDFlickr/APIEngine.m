@@ -74,10 +74,19 @@
     } failure:^(NSData *data, NSError *error) {
         if (mode == FETCH_ONE_BY_ONE)
         {
-            [self.delegate singleImageReceived:nil error:error];
+            SEL selector = NSSelectorFromString(@"singleImageReceived:error:");
+            if ([self.delegate respondsToSelector:selector])
+            {
+                [self.delegate singleImageReceived:nil error:error];
+            }
         }
-        else{
-            [self.delegate imagesReceived:nil error:error];
+        else
+        {
+            SEL selector = NSSelectorFromString(@"imagesReceived:error:");
+            if ([self.delegate respondsToSelector:selector])
+            {
+                [self.delegate imagesReceived:nil error:error];
+            }
         }
     }];
 }
@@ -128,13 +137,21 @@
                                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                                if (mode == FETCH_ONE_BY_ONE)
                                                                {
-                                                                   [self.delegate singleImageReceived:photo error:nil];
+                                                                   SEL selector = NSSelectorFromString(@"singleImageReceived:error:");
+                                                                   if ([self.delegate respondsToSelector:selector])
+                                                                   {
+                                                                       [self.delegate singleImageReceived:photo error:nil];
+                                                                   }
                                                                }
                                                                else
                                                                {
                                                                    if (self.photoArray.count ==  self.resultPhotoArray.count)
                                                                    {
-                                                                       [self.delegate imagesReceived:self.photoArray error:nil];
+                                                                       SEL selector = NSSelectorFromString(@"imagesReceived:error:");
+                                                                       if ([self.delegate respondsToSelector:selector])
+                                                                       {
+                                                                           [self.delegate imagesReceived:self.photoArray error:nil];
+                                                                       }
                                                                    }
                                                                }
                                                                
